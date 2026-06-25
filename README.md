@@ -113,7 +113,7 @@ if (SystemBuildUtil.isOs3AtLeast()) {
 2. 从相册选择图片；
 3. 点击「标准方式设置壁纸」；
 4. 点击「开启随屏滚动」自动执行命令。
->若设备拥有root权限，建议使用WallpaperScrollFix (https://github.com/BlizzardAn225/WallpaperScrollFix)。
+>若设备拥有root权限，建议使用WallpaperScrollFix （https://github.com/BlizzardAn225/WallpaperScrollFix。）
 
 ### 从源码构建
 
