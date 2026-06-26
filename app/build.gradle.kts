@@ -11,7 +11,7 @@ android {
             val output = this as com.android.build.gradle.internal.api.BaseVariantOutputImpl
 
             output.outputFileName =
-                "WallpaperSetter_v${versionName}_release.apk"
+                "WallpaperSetter_v${versionName}_debug.apk"
         }
     }
 
@@ -20,7 +20,7 @@ android {
         minSdk = 29
         targetSdk = 34
         versionCode = 1
-        versionName = "1.0"
+        versionName = "1.0.1"
     }
 
     buildTypes {

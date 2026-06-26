@@ -1,5 +1,8 @@
 # HyperOS 3 Scroll Wallpaper Setter
 
+**重要：根据用户反馈，软件在 红米K50U 澎湃OS3.0.2 无效，现在需要用户进行测试，若出现无效的情况，请在Issue中报告您的设备型号、系统版本、点击“开启随屏滚动”后，Tosat提示中的值。**
+**Important: Based on user feedback, this app is not working on Redmi K50 Ultra with HyperOS 3.0.2. User testing is now needed. If it doesn't work on your device, please report the following in an Issue: your device model, system version, and the value shown in the Toast message after tapping "Enable Scrolling".**
+
 [**English**](#english) | [**中文**](#chinese)
 
 <a name="english"></a>

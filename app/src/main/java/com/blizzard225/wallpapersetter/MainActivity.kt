@@ -177,22 +177,42 @@ class MainActivity : AppCompatActivity() {
                 )
                 method.isAccessible = true
 
-                val process = method.invoke(
+                val putProcess = method.invoke(
                     null,
                     arrayOf("settings", "put", "secure", "pref_key_wallpaper_screen_scrolled_span", "1"),
                     null,
                     null
                 ) as Process
 
-                val exitCode = process.waitFor()
+                val exitCode = putProcess.waitFor()
 
-                runOnUiThread {
-                    if (exitCode == 0) {
-                        Toast.makeText(this, "随屏滚动已开启", Toast.LENGTH_LONG).show()
-                    } else {
+                if (exitCode != 0) {
+                    runOnUiThread {
                         Toast.makeText(this, "执行失败，退出码：$exitCode", Toast.LENGTH_LONG).show()
                         copyCommandToClipboard()
                     }
+                    return@Thread
+                }
+
+                val getProcess = method.invoke(
+                    null,
+                    arrayOf("settings", "get", "secure", "pref_key_wallpaper_screen_scrolled_span"),
+                    null,
+                    null
+                ) as Process
+
+                val result = getProcess.inputStream.bufferedReader().use { it.readText().trim() }
+                getProcess.waitFor()
+
+                val display = when (result) {
+                    "1" -> "随屏滚动已开启（当前值：1）"
+                    "0" -> "随屏滚动已关闭（当前值：0）"
+                    "" -> "随屏滚动未设置（当前值：null）"
+                    else -> "随屏滚动已开启（当前值：$result）"
+                }
+
+                runOnUiThread {
+                    Toast.makeText(this, display, Toast.LENGTH_LONG).show()
                 }
             } catch (e: Exception) {
                 runOnUiThread {
