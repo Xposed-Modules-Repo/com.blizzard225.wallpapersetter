@@ -192,7 +192,7 @@ class MainActivity : AppCompatActivity() {
             if (requestCode == SHIZUKU_PERMISSION_REQUEST_CODE) {
                 shizukuPermissionGranted =
                     grantResult == PackageManager.PERMISSION_GRANTED
-
+                updateModuleStatusCard()
                 updateButtonState()
 
                 Toast.makeText(
@@ -244,14 +244,22 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateModuleStatusCard() {
-        if (moduleActive) {
-            moduleStatusCard.setCardBackgroundColor(Color.parseColor("#4CB050"))
-            moduleStatusIcon.text = "✓"
-            moduleStatusText.text = "已激活\nLSPosed"
-        } else {
-            moduleStatusCard.setCardBackgroundColor(Color.parseColor("#FF0000"))
-            moduleStatusIcon.text = "✕"
-            moduleStatusText.text = "未激活\nNone"
+        when {
+            moduleActive -> {
+                moduleStatusCard.setCardBackgroundColor(Color.parseColor("#31D362"))
+                moduleStatusIcon.text = "✓"
+                moduleStatusText.text = "已激活\nLSPosed"
+            }
+            shizukuPermissionGranted -> {
+                moduleStatusCard.setCardBackgroundColor(Color.parseColor("#FF9A2F"))
+                moduleStatusIcon.text = "○"
+                moduleStatusText.text = "免Root工作中\nShizuku"
+            }
+            else -> {
+                moduleStatusCard.setCardBackgroundColor(Color.parseColor("#FF0000"))
+                moduleStatusIcon.text = "✕"
+                moduleStatusText.text = "未激活\nNone"
+            }
         }
     }
 

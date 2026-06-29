@@ -79,6 +79,7 @@ When applying a wallpaper, even without scaling, the "Lock Screen Edit" app will
 1. Activate the module;
 2. Restart the "Wallpaper" app (if "Lock Screen Edit" or "Wallpaper & Personalization" is running, it is recommended to restart them as well);
 3. Set lock screen/desktop wallpaper through the app, or use the original setting method.
+    > If you experience a brief black screen on the desktop after rebooting, please use the default wallpaper setting method to set your home screen wallpaper again.
 
 ### Building from Source
 
@@ -188,6 +189,7 @@ Root：
 1. 激活模块；
 2. 重启“壁纸”APP（若“锁屏编辑”APP、“壁纸与个性化”APP在运行，最好一并重启）；
 3. 进入软件设置锁屏/桌面壁纸，或使用原本的设置方式。
+    >若重启后进入桌面时，桌面壁纸出现短暂黑屏，请使用原本的壁纸设置方法设置桌面壁纸。
 
 ### 从源码构建
 
