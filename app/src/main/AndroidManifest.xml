@@ -11,6 +11,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/logo"
+        android:roundIcon="@mipmap/logo_round"
         android:label="壁纸设置器"
         android:theme="@style/Theme.WallpaperTool">
 

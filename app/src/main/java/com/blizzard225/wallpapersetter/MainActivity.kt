@@ -24,6 +24,7 @@ import com.google.android.material.textfield.TextInputEditText
 import rikka.shizuku.Shizuku
 import android.content.pm.PackageManager
 import com.google.android.material.checkbox.MaterialCheckBox
+import com.google.android.material.color.DynamicColors
 
 class MainActivity : AppCompatActivity() {
 
@@ -70,6 +71,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        DynamicColors.applyToActivityIfAvailable(this)
         setContentView(R.layout.activity_main)
 
         cropImageView = findViewById(R.id.cropImageView)
@@ -229,21 +231,20 @@ class MainActivity : AppCompatActivity() {
         if (moduleActive) {
             btn.text = "无需手动设置"
             btn.isEnabled = false
-            btn.setTextColor(Color.GRAY)
             btn.setOnClickListener { }
             return
         }
 
+        btn.isEnabled = true
+
         if (shizukuPermissionGranted) {
             btn.text = "开启随屏滚动"
-            btn.setTextColor(Color.WHITE)
 
             btn.setOnClickListener {
                 enableScroll()
             }
         } else {
             btn.text = "复制命令"
-            btn.setTextColor(Color.WHITE)
 
             btn.setOnClickListener {
                 copyCommandToClipboard()

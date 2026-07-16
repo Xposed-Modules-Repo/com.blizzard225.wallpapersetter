@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Android 11 及以下使用固定颜色作为 fallback -->
+    <color name="logo_background">#FFFFFF</color>
+</resources>
